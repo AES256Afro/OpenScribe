@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8"><link rel="stylesheet" href="popup.css"></head>
+  <body>
+    <header><span>OS</span><strong>OpenScribe</strong></header>
+    <p id="page">Loading page...</p>
+    <button id="audio">Send page audio</button>
+    <button id="selection" class="secondary">Send selected text</button>
+    <details><summary>Connection settings</summary><label>Endpoint<input id="endpoint" value="http://127.0.0.1:43110/ingest"></label><label>Companion token<input id="token" type="password"></label><button id="save" class="quiet">Save</button></details>
+    <div id="status"></div><script src="popup.js"></script>
+  </body>
+</html>

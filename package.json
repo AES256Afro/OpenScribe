@@ -1,0 +1,52 @@
+{
+  "name": "openscribe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first transcription and provider-neutral AI notes for personal voice recorders",
+  "author": "OpenScribe contributors",
+  "license": "AGPL-3.0-only",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "dist": "pnpm build && electron-builder",
+    "dist:windows": "pnpm build && electron-builder --win",
+    "dist:macos": "pnpm build && electron-builder --mac",
+    "dist:linux": "pnpm build && electron-builder --linux",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "electron-vite": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "electron": "latest",
+    "electron-builder": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  },
+  "packageManager": "pnpm@11.9.0",
+  "build": {
+    "appId": "dev.openscribe.app",
+    "productName": "OpenScribe",
+    "artifactName": "OpenScribe-${version}-${os}-${arch}.${ext}",
+    "directories": { "output": "dist" },
+    "files": ["out/**/*", "package.json"],
+    "asar": true,
+    "win": { "target": ["nsis", "portable"] },
+    "nsis": { "artifactName": "OpenScribe-Setup-${version}-${arch}.${ext}" },
+    "portable": { "artifactName": "OpenScribe-Portable-${version}-${arch}.${ext}" },
+    "mac": { "target": ["dmg", "zip"], "category": "public.app-category.productivity" },
+    "linux": { "target": ["AppImage", "deb"], "category": "AudioVideo" }
+  }
+}
