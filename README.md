@@ -4,6 +4,20 @@ OpenScribe is a local-first desktop transcription notebook for Windows, macOS, a
 
 There is no OpenScribe subscription, hosted account, or required cloud backend.
 
+## Screenshots
+
+### Local-first workspace
+
+![OpenScribe local-first workspace](docs/screenshots/home.png)
+
+### Private audio and Whisper setup
+
+![OpenScribe local audio and Whisper settings](docs/screenshots/settings-local-first.png)
+
+### Local models with Ollama or LM Studio
+
+![OpenScribe local model settings](docs/screenshots/settings-local-model.png)
+
 ## Privacy-first defaults
 
 - Recordings and metadata remain in the operating system's per-user application directory.
